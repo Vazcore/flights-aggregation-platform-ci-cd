@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-flightsapp-dev-201833-authRole",
+      "UnauthRoleArn": "arn:aws:iam::730772176775:role/amplify-flightsapp-dev-201833-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::730772176775:role/amplify-flightsapp-dev-201833-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-flightsapp-dev-201833-deployment",
+      "UnauthRoleName": "amplify-flightsapp-dev-201833-unauthRole",
+      "StackName": "amplify-flightsapp-dev-201833",
+      "StackId": "arn:aws:cloudformation:us-west-2:730772176775:stack/amplify-flightsapp-dev-201833/61aaa0c0-76af-11ed-9351-0a07a952e8a1",
+      "AmplifyAppId": "d2d6bz1bob162e"
+    },
+    "categories": {
+      "auth": {
+        "flightsapp11f33d9d": {}
+      }
+    }
+  }
+}
