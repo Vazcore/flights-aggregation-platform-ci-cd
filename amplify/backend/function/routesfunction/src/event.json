@@ -1,8 +1,8 @@
 {
   "httpMethod": "GET",
-  "path": "/providers",
+  "path": "/routes",
   "queryStringParameters": {
-    "limit": "10"
+    "limit": "100"
   },
   "headers": {
     "Content-Type": "application/json"

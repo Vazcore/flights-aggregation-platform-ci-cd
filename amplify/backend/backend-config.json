@@ -50,6 +50,11 @@
           }
         }
       ]
+    },
+    "routesfunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "api": {
@@ -60,6 +65,20 @@
         {
           "category": "function",
           "resourceName": "providersfunction",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
+    },
+    "routesapi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "routesfunction",
           "attributes": [
             "Name",
             "Arn"

@@ -13,6 +13,9 @@
     },
     "providersapi": {
       "Type": "String"
+    },
+    "routesapi": {
+      "Type": "String"
     }
   },
   "Conditions": {
