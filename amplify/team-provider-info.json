@@ -20,13 +20,18 @@
         "providersfunction": {
           "deploymentBucketName": "amplify-flightsapp-dev-201833-deployment",
           "s3Key": "amplify-builds/providersfunction-57516931786144534b63-build.zip"
+        },
+        "routesfunction": {
+          "deploymentBucketName": "amplify-flightsapp-dev-201833-deployment",
+          "s3Key": "amplify-builds/routesfunction-6f696261536832643943-build.zip"
         }
       },
       "storage": {
         "flightsdb": {}
       },
       "api": {
-        "providersapi": {}
+        "providersapi": {},
+        "routesapi": {}
       }
     }
   }
