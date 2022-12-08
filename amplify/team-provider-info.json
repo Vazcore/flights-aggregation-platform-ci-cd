@@ -9,11 +9,24 @@
       "UnauthRoleName": "amplify-flightsapp-dev-201833-unauthRole",
       "StackName": "amplify-flightsapp-dev-201833",
       "StackId": "arn:aws:cloudformation:us-west-2:730772176775:stack/amplify-flightsapp-dev-201833/61aaa0c0-76af-11ed-9351-0a07a952e8a1",
-      "AmplifyAppId": "d2d6bz1bob162e"
+      "AmplifyAppId": "d2d6bz1bob162e",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-flightsapp-dev-201833-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
         "flightsapp11f33d9d": {}
+      },
+      "function": {
+        "providersfunction": {
+          "deploymentBucketName": "amplify-flightsapp-dev-201833-deployment",
+          "s3Key": "amplify-builds/providersfunction-57516931786144534b63-build.zip"
+        }
+      },
+      "storage": {
+        "flightsdb": {}
+      },
+      "api": {
+        "providersapi": {}
       }
     }
   }

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -16,12 +16,12 @@ const Header = () => {
       navigate("/");
       document.location.reload();
     }, 1000);
-  }, [signOut]);
+  }, [signOut, navigate]);
 
   return (
     <Navbar bg="dark" expand="lg" className="app nav-bar-app">
       <Container>
-        <Navbar.Brand href="#home">FunWithFlights</Navbar.Brand>
+        <Navbar.Brand href="/">FunWithFlights</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="flex-right">
           <Nav className="me-auto ">

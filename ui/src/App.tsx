@@ -15,6 +15,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/home";
 import User from "./pages/user";
+import AdminPage from "./pages/admin";
 
 Amplify.configure(config);
 
@@ -33,13 +34,14 @@ function App() {
             <Routes>
               <Route index path="/" element={<Home />}></Route>
               <Route path="/user" element={<User />}></Route>
+              <Route path="/admin" element={<AdminPage />}></Route>
             </Routes>
           </Container> 
         </BrowserRouter>
         
-        <Container>
+        {/* <Container>
           <div>ChatBot</div>
-        </Container>
+        </Container> */}
       </Grid>
     </Authenticator.Provider>
   );
