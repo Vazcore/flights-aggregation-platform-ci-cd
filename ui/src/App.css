@@ -57,6 +57,13 @@
   flex-wrap: wrap;
 }
 
+.flex.h-between {
+  justify-content: space-between;
+}
+.flex.h-center {
+  justify-content: center;
+}
+
 .flex div {
   margin-left: 15px;
   margin-bottom: 10px;
@@ -69,6 +76,7 @@
 .flight-search {
   background-color: #F9F9F9;
   margin-top: 20px;
+  margin-bottom: 20px;
   border-radius: 5px;
   box-shadow: 0 6px 9px 0 rgb(0 0 0 / 10%);
   padding: 20px;

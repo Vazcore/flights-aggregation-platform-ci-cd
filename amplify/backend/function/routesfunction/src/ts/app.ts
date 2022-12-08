@@ -2,6 +2,7 @@ import fastify, { FastifyReply, FastifyRequest } from "fastify";
 import AWS from "aws-sdk";
 import get from "lodash/get";
 import https from "https";
+import cors from "@fastify/cors";
 
 interface Provider {
   id: number;
@@ -10,8 +11,24 @@ interface Provider {
   lambdaUrl?: string;
 }
 
+export interface FlightRoute {
+  airline: string;
+  sourceAirport: string;
+  destinationAirport: string;
+  codeShare: string;
+  stops: number;
+  equipment?: string;
+}
 
-const _app = fastify();
+const _app = fastify({
+  logger: true,
+});
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
+_app.register(cors, {
+  origin: "*",
+  methods: ["GET"],
+});
+
 AWS.config.update({ region: process.env.TABLE_REGION });
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
@@ -97,15 +114,34 @@ _app.get("/routes", async (request: FastifyRequest, reply: FastifyReply) => {
   try {
     const from = get(request, "query.from", 0);
     const to = get(request, "query.to", 100);
+    const originAirport = get(request, "query.origin", "").toLowerCase();
+    const desinationAirport = get(request, "query.dest", "").toLowerCase();
     const providers: Array<Provider> = await fetchProviders(request);
     const apiRequests = providers.map(provider => getRequest(provider.lambdaUrl || provider.apiUrl)) as Array<Promise<Provider>>;
     const responses = await Promise.allSettled(apiRequests);
-    const response = responses.filter(resp => resp.status === "fulfilled").reduce((agg, current) => {
+    let response: Array<FlightRoute> = responses.filter(resp => resp.status === "fulfilled").reduce((agg, current) => {
       return agg.concat(get(current, "value", []));
-    }, []).slice(Number(from), Number(to));
-    await reply.send(response); 
+    }, []);
+
+    if (originAirport.length > 0 && desinationAirport.length > 0) {
+      response = response.filter(
+        route => (
+          get(route, "sourceAirport", "").toLowerCase() === originAirport &&
+          get(route, "destinationAirport", "").toLowerCase() === desinationAirport
+        ),
+      );
+    }
+
+    await reply.send(response.slice(Number(from), Number(to))); 
   } catch (error) {
     await reply.code(500).send(error); 
+  }
+});
+
+_app.listen({ port: 3001 }, (err) => {
+  if (err) {
+    _app.log.error(err);
+    process.exit(1);
   }
 });
 

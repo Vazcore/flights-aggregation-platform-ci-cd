@@ -8,7 +8,15 @@ const fastify_1 = __importDefault(require("fastify"));
 const aws_sdk_1 = __importDefault(require("aws-sdk"));
 const get_1 = __importDefault(require("lodash/get"));
 const https_1 = __importDefault(require("https"));
-const _app = (0, fastify_1.default)();
+const cors_1 = __importDefault(require("@fastify/cors"));
+const _app = (0, fastify_1.default)({
+    logger: true,
+});
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
+_app.register(cors_1.default, {
+    origin: "*",
+    methods: ["GET"],
+});
 aws_sdk_1.default.config.update({ region: process.env.TABLE_REGION });
 const dynamodb = new aws_sdk_1.default.DynamoDB.DocumentClient();
 const partitionKeyName = "id";
@@ -78,16 +86,28 @@ _app.get("/routes", async (request, reply) => {
     try {
         const from = (0, get_1.default)(request, "query.from", 0);
         const to = (0, get_1.default)(request, "query.to", 100);
+        const originAirport = (0, get_1.default)(request, "query.origin", "").toLowerCase();
+        const desinationAirport = (0, get_1.default)(request, "query.dest", "").toLowerCase();
         const providers = await fetchProviders(request);
         const apiRequests = providers.map(provider => getRequest(provider.lambdaUrl || provider.apiUrl));
         const responses = await Promise.allSettled(apiRequests);
-        const response = responses.filter(resp => resp.status === "fulfilled").reduce((agg, current) => {
+        let response = responses.filter(resp => resp.status === "fulfilled").reduce((agg, current) => {
             return agg.concat((0, get_1.default)(current, "value", []));
-        }, []).slice(Number(from), Number(to));
-        await reply.send(response);
+        }, []);
+        if (originAirport.length > 0 && desinationAirport.length > 0) {
+            response = response.filter(route => ((0, get_1.default)(route, "sourceAirport", "").toLowerCase() === originAirport &&
+                (0, get_1.default)(route, "destinationAirport", "").toLowerCase() === desinationAirport));
+        }
+        await reply.send(response.slice(Number(from), Number(to)));
     }
     catch (error) {
         await reply.code(500).send(error);
+    }
+});
+_app.listen({ port: 3001 }, (err) => {
+    if (err) {
+        _app.log.error(err);
+        process.exit(1);
     }
 });
 exports.app = _app;

@@ -23,7 +23,7 @@
         },
         "routesfunction": {
           "deploymentBucketName": "amplify-flightsapp-dev-201833-deployment",
-          "s3Key": "amplify-builds/routesfunction-6f696261536832643943-build.zip"
+          "s3Key": "amplify-builds/routesfunction-2b4f3930324555466f30-build.zip"
         }
       },
       "storage": {
