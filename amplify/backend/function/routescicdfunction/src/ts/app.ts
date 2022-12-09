@@ -33,9 +33,9 @@ AWS.config.update({ region: process.env.TABLE_REGION });
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
 const partitionKeyName = "id";
-const partitionKeyType = "N";
+const partitionKeyType = "S";
 
-let tableName = "providerstable";
+let tableName = "providers";
 if (process.env.ENV && process.env.ENV !== "NONE") {
   tableName = tableName + "-" + process.env.ENV;
 }

@@ -27,7 +27,7 @@
         },
         "routescicdfunction": {
           "deploymentBucketName": "amplify-flightsappcicd-dev-162123-deployment",
-          "s3Key": "amplify-builds/routescicdfunction-574b765871585a597676-build.zip"
+          "s3Key": "amplify-builds/routescicdfunction-4b507238717168594545-build.zip"
         }
       },
       "api": {

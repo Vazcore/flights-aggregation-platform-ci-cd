@@ -20,8 +20,8 @@ _app.register(cors_1.default, {
 aws_sdk_1.default.config.update({ region: process.env.TABLE_REGION });
 const dynamodb = new aws_sdk_1.default.DynamoDB.DocumentClient();
 const partitionKeyName = "id";
-const partitionKeyType = "N";
-let tableName = "providerstable";
+const partitionKeyType = "S";
+let tableName = "providers";
 if (process.env.ENV && process.env.ENV !== "NONE") {
     tableName = tableName + "-" + process.env.ENV;
 }
