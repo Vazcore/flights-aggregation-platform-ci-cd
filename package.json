@@ -1,6 +1,6 @@
 {
   "name": "flight-aggregation-platform-ci-cd",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@aws-amplify/ui-react": "^4.2.0",
