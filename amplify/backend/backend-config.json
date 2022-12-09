@@ -41,6 +41,10 @@
     "purchasesdb": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
+    },
+    "paymentsdb": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
     }
   },
   "function": {
@@ -138,6 +142,25 @@
           }
         }
       ]
+    },
+    "paymentsfunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "paymentsdb",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        }
+      ]
     }
   },
   "api": {
@@ -198,6 +221,20 @@
         {
           "category": "function",
           "resourceName": "purchasestable",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
+    },
+    "paymentsapi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "paymentsfunction",
           "attributes": [
             "Name",
             "Arn"

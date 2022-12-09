@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "paths": {
+    "/payments": {
+      "name": "/payments",
+      "lambdaFunction": "paymentsfunction",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}

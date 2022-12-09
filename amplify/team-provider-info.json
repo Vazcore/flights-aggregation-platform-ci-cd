@@ -43,7 +43,8 @@
         "purchasestable": {
           "deploymentBucketName": "amplify-flightsappcicd-dev-162123-deployment",
           "s3Key": "amplify-builds/purchasestable-78756854517837764e79-build.zip"
-        }
+        },
+        "paymentsfunction": {}
       },
       "api": {
         "providerscicdapi": {},
