@@ -73,6 +73,10 @@
   margin-bottom: 20px;
 }
 
+.m-right-40, .app.m-right-40 {
+  margin-right: 40px !important;
+}
+
 .flight-search {
   background-color: #F9F9F9;
   margin-top: 20px;
@@ -80,4 +84,8 @@
   border-radius: 5px;
   box-shadow: 0 6px 9px 0 rgb(0 0 0 / 10%);
   padding: 20px;
+}
+
+.nav-link-app, .nav-link-app a {
+  text-decoration: none;
 }

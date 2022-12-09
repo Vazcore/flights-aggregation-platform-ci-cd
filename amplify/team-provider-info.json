@@ -17,7 +17,10 @@
         "flightsappcicd7bbf0a1e": {}
       },
       "storage": {
-        "flightsdbcicd": {}
+        "flightsdbcicd": {},
+        "tiersdb": {},
+        "membersdb": {},
+        "purchasesdb": {}
       },
       "function": {
         "providerscicdfunction": {
@@ -28,11 +31,25 @@
         "routescicdfunction": {
           "deploymentBucketName": "amplify-flightsappcicd-dev-162123-deployment",
           "s3Key": "amplify-builds/routescicdfunction-6d2f4d6b524c416e6534-build.zip"
+        },
+        "membersfunction": {
+          "deploymentBucketName": "amplify-flightsappcicd-dev-162123-deployment",
+          "s3Key": "amplify-builds/membersfunction-314b693337666e6f584b-build.zip"
+        },
+        "tiersfunction": {
+          "deploymentBucketName": "amplify-flightsappcicd-dev-162123-deployment",
+          "s3Key": "amplify-builds/tiersfunction-336d5538475044794c6b-build.zip"
+        },
+        "purchasestable": {
+          "deploymentBucketName": "amplify-flightsappcicd-dev-162123-deployment",
+          "s3Key": "amplify-builds/purchasestable-78756854517837764e79-build.zip"
         }
       },
       "api": {
         "providerscicdapi": {},
-        "routescicdapi": {}
+        "routescicdapi": {},
+        "membersapi": {},
+        "purchasesapi": {}
       }
     }
   }

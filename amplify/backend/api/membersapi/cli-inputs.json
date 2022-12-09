@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "paths": {
+    "/members": {
+      "name": "/members",
+      "lambdaFunction": "membersfunction",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/tiers": {
+      "name": "/tiers",
+      "lambdaFunction": "tiersfunction",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}

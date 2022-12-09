@@ -1,0 +1,10 @@
+{
+  "resourceName": "membersdb",
+  "tableName": "memberstable",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

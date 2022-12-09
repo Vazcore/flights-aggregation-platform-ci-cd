@@ -1,0 +1,10 @@
+{
+  "resourceName": "purchasesdb",
+  "tableName": "purchasestable",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

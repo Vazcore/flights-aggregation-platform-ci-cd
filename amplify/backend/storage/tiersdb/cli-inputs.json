@@ -1,0 +1,14 @@
+{
+  "resourceName": "tiersdb",
+  "tableName": "tierstable",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "name",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
