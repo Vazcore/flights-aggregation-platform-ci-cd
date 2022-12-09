@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/routes": {
+      "name": "/routes",
+      "lambdaFunction": "routescicdfunction",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

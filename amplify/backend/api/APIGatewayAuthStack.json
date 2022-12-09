@@ -11,10 +11,10 @@
     "env": {
       "Type": "String"
     },
-    "providersapi": {
+    "providerscicdapi": {
       "Type": "String"
     },
-    "routesapi": {
+    "routescicdapi": {
       "Type": "String"
     }
   },
@@ -55,7 +55,7 @@
                       },
                       ":",
                       {
-                        "Ref": "providersapi"
+                        "Ref": "providerscicdapi"
                       },
                       "/",
                       {
@@ -85,7 +85,7 @@
                       },
                       ":",
                       {
-                        "Ref": "providersapi"
+                        "Ref": "providerscicdapi"
                       },
                       "/",
                       {

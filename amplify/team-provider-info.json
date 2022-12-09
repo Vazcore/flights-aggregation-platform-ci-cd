@@ -1,37 +1,38 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-flightsapp-dev-201833-authRole",
-      "UnauthRoleArn": "arn:aws:iam::730772176775:role/amplify-flightsapp-dev-201833-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::730772176775:role/amplify-flightsapp-dev-201833-authRole",
+      "AuthRoleName": "amplify-flightsappcicd-dev-162123-authRole",
+      "UnauthRoleArn": "arn:aws:iam::730772176775:role/amplify-flightsappcicd-dev-162123-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::730772176775:role/amplify-flightsappcicd-dev-162123-authRole",
       "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-flightsapp-dev-201833-deployment",
-      "UnauthRoleName": "amplify-flightsapp-dev-201833-unauthRole",
-      "StackName": "amplify-flightsapp-dev-201833",
-      "StackId": "arn:aws:cloudformation:us-west-2:730772176775:stack/amplify-flightsapp-dev-201833/61aaa0c0-76af-11ed-9351-0a07a952e8a1",
-      "AmplifyAppId": "d2d6bz1bob162e",
-      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-flightsapp-dev-201833-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+      "DeploymentBucketName": "amplify-flightsappcicd-dev-162123-deployment",
+      "UnauthRoleName": "amplify-flightsappcicd-dev-162123-unauthRole",
+      "StackName": "amplify-flightsappcicd-dev-162123",
+      "StackId": "arn:aws:cloudformation:us-west-2:730772176775:stack/amplify-flightsappcicd-dev-162123/6a7d2580-7757-11ed-af3d-06c36f6044e3",
+      "AmplifyAppId": "d248x0u3fs36iw",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-flightsappcicd-dev-162123-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
-        "flightsapp11f33d9d": {}
-      },
-      "function": {
-        "providersfunction": {
-          "deploymentBucketName": "amplify-flightsapp-dev-201833-deployment",
-          "s3Key": "amplify-builds/providersfunction-57516931786144534b63-build.zip"
-        },
-        "routesfunction": {
-          "deploymentBucketName": "amplify-flightsapp-dev-201833-deployment",
-          "s3Key": "amplify-builds/routesfunction-2b4f3930324555466f30-build.zip"
-        }
+        "flightsappcicd7bbf0a1e": {}
       },
       "storage": {
-        "flightsdb": {}
+        "flightsdbcicd": {}
+      },
+      "function": {
+        "providerscicdfunction": {
+          "adminusernames": "oleks",
+          "deploymentBucketName": "amplify-flightsappcicd-dev-162123-deployment",
+          "s3Key": "amplify-builds/providerscicdfunction-5964344b41516c4d654a-build.zip"
+        },
+        "routescicdfunction": {
+          "deploymentBucketName": "amplify-flightsappcicd-dev-162123-deployment",
+          "s3Key": "amplify-builds/routescicdfunction-574b765871585a597676-build.zip"
+        }
       },
       "api": {
-        "providersapi": {},
-        "routesapi": {}
+        "providerscicdapi": {},
+        "routescicdapi": {}
       }
     }
   }

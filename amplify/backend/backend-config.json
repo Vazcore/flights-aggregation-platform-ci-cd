@@ -1,6 +1,6 @@
 {
   "auth": {
-    "flightsapp11f33d9d": {
+    "flightsappcicd7bbf0a1e": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -26,20 +26,20 @@
     }
   },
   "storage": {
-    "flightsdb": {
+    "flightsdbcicd": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
     }
   },
   "function": {
-    "providersfunction": {
+    "providerscicdfunction": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": [
         {
           "category": "storage",
-          "resourceName": "flightsdb",
+          "resourceName": "flightsdbcicd",
           "attributes": [
             "Name",
             "Arn"
@@ -51,14 +51,14 @@
         }
       ]
     },
-    "routesfunction": {
+    "routescicdfunction": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": [
         {
           "category": "storage",
-          "resourceName": "flightsdb",
+          "resourceName": "flightsdbcicd",
           "attributes": [
             "Name",
             "Arn"
@@ -72,13 +72,13 @@
     }
   },
   "api": {
-    "providersapi": {
+    "providerscicdapi": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "providersfunction",
+          "resourceName": "providerscicdfunction",
           "attributes": [
             "Name",
             "Arn"
@@ -86,13 +86,13 @@
         }
       ]
     },
-    "routesapi": {
+    "routescicdapi": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "routesfunction",
+          "resourceName": "routescicdfunction",
           "attributes": [
             "Name",
             "Arn"

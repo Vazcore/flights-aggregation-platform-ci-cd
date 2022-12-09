@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "paths": {
+    "/providers": {
+      "name": "/providers",
+      "lambdaFunction": "providerscicdfunction",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}

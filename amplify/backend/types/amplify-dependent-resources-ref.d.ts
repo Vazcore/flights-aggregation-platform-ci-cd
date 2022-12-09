@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "auth": {
-        "flightsapp11f33d9d": {
+        "flightsappcicd7bbf0a1e": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
@@ -11,7 +11,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "storage": {
-        "flightsdb": {
+        "flightsdbcicd": {
             "Name": "string",
             "Arn": "string",
             "StreamArn": "string",
@@ -23,13 +23,13 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "function": {
-        "providersfunction": {
+        "providerscicdfunction": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
             "LambdaExecutionRole": "string"
         },
-        "routesfunction": {
+        "routescicdfunction": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
@@ -37,12 +37,12 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "api": {
-        "providersapi": {
+        "providerscicdapi": {
             "RootUrl": "string",
             "ApiName": "string",
             "ApiId": "string"
         },
-        "routesapi": {
+        "routescicdapi": {
             "RootUrl": "string",
             "ApiName": "string",
             "ApiId": "string"
