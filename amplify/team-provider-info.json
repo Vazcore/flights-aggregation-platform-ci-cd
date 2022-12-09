@@ -28,7 +28,46 @@
         "routescicdfunction": {
           "deploymentBucketName": "amplify-flightsappcicd-dev-162123-deployment",
           "s3Key": "amplify-builds/routescicdfunction-574b765871585a597676-build.zip"
-        }
+        },
+        "flightsdbcicd": {}
+      },
+      "api": {
+        "providerscicdapi": {},
+        "routescicdapi": {}
+      }
+    }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-flightsappcicd-prod-183150-authRole",
+      "UnauthRoleArn": "arn:aws:iam::730772176775:role/amplify-flightsappcicd-prod-183150-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::730772176775:role/amplify-flightsappcicd-prod-183150-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-flightsappcicd-prod-183150-deployment",
+      "UnauthRoleName": "amplify-flightsappcicd-prod-183150-unauthRole",
+      "StackName": "amplify-flightsappcicd-prod-183150",
+      "StackId": "arn:aws:cloudformation:us-west-2:730772176775:stack/amplify-flightsappcicd-prod-183150/a38a1380-7769-11ed-bcf2-0a74e7003a91",
+      "AmplifyAppId": "d248x0u3fs36iw",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-flightsappcicd-prod-183150-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "flightsappcicd7bbf0a1e": {}
+      },
+      "function": {
+        "providerscicdfunction": {
+          "adminusernames": "oleks",
+          "deploymentBucketName": "amplify-flightsappcicd-prod-183150-deployment",
+          "s3Key": "amplify-builds/providerscicdfunction-5964344b41516c4d654a-build.zip"
+        },
+        "routescicdfunction": {
+          "deploymentBucketName": "amplify-flightsappcicd-prod-183150-deployment",
+          "s3Key": "amplify-builds/routescicdfunction-574b765871585a597676-build.zip"
+        },
+        "flightsdbcicd": {}
+      },
+      "storage": {
+        "flightsdbcicd": {}
       },
       "api": {
         "providerscicdapi": {},
